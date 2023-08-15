@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do App</title>
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#fff">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="frame">
+        <div class="heading">
+            Today's task
+            <span id="listCount">0</span>
+        </div>
+        <div class="list"></div>
+        <form class="bottomBar" onsubmit="addItem(event)">
+            <input type="text" id="text" placeholder="write a task" required>
+            <button>Add</button>
+        </form>
+    </div>
+    
+    <script src="todo.js"></script>
+</body>
+</html>

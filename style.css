@@ -1,0 +1,126 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #fff;
+    padding: 16px;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+
+.frame {
+    display: grid;
+    grid-template-rows: max-content calc(100vh - 180px) max-content;
+    gap: 16px;
+    height: 100%;
+    width: min(600px, 100%);
+}
+
+.frame .heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 16px 0 16px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.frame .bottomBar{
+    display: grid;
+    grid-template-columns: auto max-content;
+    gap: 16px;
+    align-items: center;
+}
+
+.list {
+    overflow-y: auto;
+    display: grid;
+    align-content: start;
+    gap: 16px;
+}
+
+.list-item {
+    display: grid;
+    grid-template-columns: max-content auto max-content;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    align-items: stretch;
+}
+
+.list-item.opened {
+    align-items: start;
+}
+
+.list-item.opened .text{
+    white-space: pre-wrap;
+}
+
+.icon {
+    width: 50px;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+}
+
+.state{
+    font-size: 30px;
+    color: #222;
+}
+
+.delBtn {
+    font-size: 24px;
+    color: tomato;
+}
+
+.list-item input{
+    appearance: none;
+    width: 20px;
+    aspect-ratio: 1;
+    border-radius: 4px;
+}
+
+.state.checked{
+    color: rgb(102, 175, 102);
+}
+
+.list-item:has(.checked) .text{
+    text-decoration: line-through;
+    text-decoration-color: tomato;
+    color: #555;
+}
+
+.list-item .text{
+    font-size: 20px;
+    line-height: 2.5;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+form :is(input, button){
+    padding: 12px;
+    width: 100%;
+    outline: transparent;
+    border: 1px solid #ddd;
+    background-color: white;
+    border-radius: 8px;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+form button{
+    background-color: #222;
+    color: white;
+    width: 80px;
+}
+
+form button:active{
+    background-color: #555;
+}
